@@ -27,13 +27,15 @@ var numbers = ("1,2,3,4,5,6,7,8,9,0");
 var characters =
 
 //confirm funtion??
+//return function
 
 //mathfloor mathrandom function
+//length fuction
 
 
 
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+// var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
