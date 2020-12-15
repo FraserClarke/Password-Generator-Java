@@ -14,7 +14,7 @@
       </header>
           <div class="card" >
             <div class="card-header">
-              <h2 class="password-display" id="passwordDisplay">Your Password</h2>
+              
               <form id="passwordGeneratorForm" class="form">
                 <label for="characterAmountNumber">Total Number of Charachers</label>
                   <div class="character-amount-container card-body">
@@ -35,11 +35,9 @@
 
                           <div class="card-body">
                             <textarea
-                              readonly
-                              id="password"
-                              placeholder="Your Secure Password"
-                              aria-label="Generated Password"
-                            ></textarea>
+                            class="password-display" id="passwordDisplay">Your Password
+                             
+                            </textarea>
                           </div>
                           <div class="card-footer">
                             <button id="generate" class="btn">Generate Password</button>

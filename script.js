@@ -10,7 +10,8 @@ var includeSymbol = document.getElementById('includeSymbols');
 var form = document.getElementById('passwordGeneratorForm');
 var displayPassword = document.getElementById('passwordDisplay');
 
-//adding uppercase, lowercase, etc
+//adding uppercase, lowercase, etc. creating array
+//using unicode, and concatinating.
 
 var UPPER_CHAR = createArray(65, 90)
 var LOWER_CHAR = createArray(97, 122) 
@@ -28,11 +29,53 @@ var SYMBOL_CHAR = createArray(33, 47).concat(
     console.log(arr);
     return arr;
   }
+  //adding listeners from input
   
   characterAmountRange.addEventListener('input', getCharacters);
   characterAmountNumber.addEventListener('input', getCharacters);
   
   form.addEventListener('submit', password);
+
+  function password(options){
+    options.preventDefault();
+    var characterAmount = characterAmountNumber.value;
+    var includeLowercases = includeLowercase.checked;
+    var includeUppercases = includeUppercase.checked;
+    var includeNumbers = includeNumber.checked;
+    var includeSymbols = includeSymbol.checked;
+  
+    console.log(characterAmount, includeLowercases, includeUppercases, includeNumbers, includeSymbols);
+  
+    var password = generatePassword(characterAmount, includeLowercases, includeUppercases, includeNumbers, includeSymbols);
+  
+    displayPassword.innerText = password;
+  
+  }
+
+  //genterating password functions
+  
+  function generatePassword(characterAmount, includeLowercases, includeUppercases, includeNumbers, includeSymbols) {
+    var charCodes = [];
+    if (includeLowercases) charCodes = charCodes.concat(LOWER_CHAR);
+    if (includeUppercases) charCodes = charCodes.concat(UPPER_CHAR);
+    if (includeNumbers) charCodes = charCodes.concat(NUMBER_CHAR);
+    if (includeSymbols) charCodes = charCodes.concat(SYMBOL_CHAR);
+  
+    var passwordChar = [];
+    for (var i = 0; i <= characterAmount; i++) {
+      var characterCode = charCodes[Math.floor(Math.random() * charCodes.length)]
+      passwordChar.push(String.fromCharCode(characterCode))
+    }
+    return passwordChar.join('')
+  }
+  
+  function getCharacters(character){
+    var value = character.target.value; 
+    characterAmountNumber.value = value;
+    characterAmountRange.value = value;
+    console.log(value);
+  }
+  
   
 
 
@@ -55,7 +98,7 @@ var SYMBOL_CHAR = createArray(33, 47).concat(
 //some logic and function wizardry.
 
 
-var lengthEl = ("8-128")
+/*var lengthEl = ("8-128")
 var lowercaseEl = ("q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m");
 var uppercaseEl = ("Q,W,E,R,T,Y,U,I,O,P,A,S,D,F,G,H,J,K,L,Z,X,C,V,B,N,M");
 var numbersEl = ("1,2,3,4,5,6,7,8,9,0");
@@ -89,3 +132,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+*/
