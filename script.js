@@ -1,4 +1,18 @@
 
+// declaring variables
+
+var characterAmountRange = document.getElementById('characterAmountRange');
+var characterAmountNumber = document.getElementById('characterAmountNumber');
+var includeUpper = document.getElementById('includeLowercase');
+var includeLower = document.getElementById('includeUppercase');
+var includeNumber = document.getElementById('includeNumbers');
+var includeSymbol = document.getElementById('includeSymbols');
+var form = document.getElementById('passwordGeneratorForm');
+var displayPassword = document.getElementById('passwordDisplay');
+
+
+
+
 
 //Pseudo
 //When button clicked prompt user for criteria
