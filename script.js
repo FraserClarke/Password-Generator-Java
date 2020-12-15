@@ -10,8 +10,30 @@ var includeSymbol = document.getElementById('includeSymbols');
 var form = document.getElementById('passwordGeneratorForm');
 var displayPassword = document.getElementById('passwordDisplay');
 
+//adding uppercase, lowercase, etc
 
+var UPPER_CHAR = createArray(65, 90)
+var LOWER_CHAR = createArray(97, 122) 
+var NUMBER_CHAR = createArray(48, 57)
+var SYMBOL_CHAR = createArray(33, 47).concat(
+	createArray(58, 64)
+	).concat(createArray(91, 96)
+  ).concat(createArray(123, 126));
 
+  function createArray(start, end){
+    var arr = [];
+    for (var i = start; i <= end; i++) {
+      arr.push(i);
+    }
+    console.log(arr);
+    return arr;
+  }
+  
+  characterAmountRange.addEventListener('input', getCharacters);
+  characterAmountNumber.addEventListener('input', getCharacters);
+  
+  form.addEventListener('submit', password);
+  
 
 
 //Pseudo
