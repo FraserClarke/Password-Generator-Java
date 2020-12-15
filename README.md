@@ -3,7 +3,7 @@ A random password generator powered by JavaScript.
 
 ## Decription
 
-An attempt to produce a functioning random password generator using javascript which produces, when if prompted, to contain a combination letters (uppper and lowercase), numbers and symbols/characters.
+An attempt to produce a functioning random password generator using javascript which produces a combination of letters (uppper and lowercase), numbers and symbols/characters.
 
 
 ## Screenshot
