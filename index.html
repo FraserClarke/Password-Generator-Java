@@ -9,7 +9,21 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
+      <header class="title card">
+        <h1>Password Generator</h1>
+      </header>
+          <div class="card" >
+            <div class="card-header">
+              <h3 class="password-display" id="passwordDisplay">Your Password</h3>
+              <form id="passwordGeneratorForm" class="form">
+                <label for="characterAmountNumber">Total Number of Charachers</label>
+                <div class="character-amount-container card-body">
+                  <input type="range" min="8" max="128" value="10"id="characterAmountRange">
+                  <input type="number" min="8" max="128" value="10" id="characterAmountNumber">
+                </div>
+      
+      
+                <header>
         <h1>Password Generator</h1>
       </header>
       <div class="card">
